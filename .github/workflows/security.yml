@@ -1,0 +1,17 @@
+name: security
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  security:
+    uses: NDDev-Technocracy-OpenNetwork/nddev-ci/.github/workflows/security.yml@a1c996fc3197192e54a362603970a49e7960e555 # v0.6.27
+    permissions:
+      contents: read
+      issues: write
+    with:
+      hosted-runner: ubuntu-26.04
