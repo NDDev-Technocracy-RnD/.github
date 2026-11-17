@@ -3,7 +3,7 @@ name: ci
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, labeled]
+    types: [opened, synchronize, reopened, labeled, edited]
   push:
     branches: [main]
   workflow_dispatch:
@@ -17,3 +17,4 @@ jobs:
       contents: read
     with:
       hosted-runner: ubuntu-26.04
+      tool-assets: .github/ci-tools.json
