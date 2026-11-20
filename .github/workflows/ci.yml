@@ -1,19 +1,20 @@
-# Pull requests run the short check; dev runs the full check.
+# Pull requests run the short check; main runs the full check.
 name: ci
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, labeled]
+    types: [opened, synchronize, reopened, labeled, edited]
   push:
-    branches: [dev]
+    branches: [main]
   workflow_dispatch:
 
 permissions: {}
 
 jobs:
   check:
-    uses: NDDev-Technocracy-OpenNetwork/nddev-ci/.github/workflows/check.yml@a1c996fc3197192e54a362603970a49e7960e555 # v0.6.27
+    uses: NDDev-Technocracy-OpenNetwork/nddev-ci/.github/workflows/check.yml@03d53ec146797bc27d7b8b37abbf766ab82041b6 # v0.6.81
     permissions:
       contents: read
     with:
       hosted-runner: ubuntu-26.04
+      tool-assets: .github/ci-tools.json

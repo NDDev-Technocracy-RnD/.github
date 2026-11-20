@@ -2,11 +2,10 @@ version: 2
 updates:
   - package-ecosystem: github-actions
     directory: /
-    target-branch: dev
     schedule:
-      interval: daily
+      interval: weekly
     cooldown:
-      default-days: 3
+      default-days: 7
     groups:
       actions:
         patterns: ['*']
